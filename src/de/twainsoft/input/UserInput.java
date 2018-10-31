@@ -1,14 +1,16 @@
 package de.twainsoft.input;
 
-import java.io.Console;
+import java.util.Scanner;
 
 public class UserInput {
 
-    public void readFromConsole() {
-        Console console = System.console();
-        if (console == null) {
-            System.out.println("No console: non-interactive mode!");
-            System.exit(0);
-        }
+    private Scanner scanner;
+
+    public UserInput() {
+        this.scanner = new Scanner(System.in);
+    }
+
+    public String readFromConsole() {
+        return this.scanner.nextLine();
     }
 }
